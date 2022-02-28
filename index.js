@@ -3,24 +3,29 @@
   Author Tobias Koppers @sokra
   Modified by Evan You @yyx990803
 */
-var loaderUtils = require('loader-utils')
 var path = require('path')
 var hash = require('hash-sum')
 var qs = require('querystring')
+
+function stringifyRequest(loaderContext, request) {
+  return JSON.stringify(
+    loaderContext.utils.contextify(loaderContext.context || loaderContext.rootContext, request)
+  );
+}
 
 module.exports = function () {}
 
 module.exports.pitch = function (remainingRequest) {
   var isServer = this.target === 'node'
   var isProduction = this.minimize || process.env.NODE_ENV === 'production'
-  var addStylesClientPath = loaderUtils.stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesClient.js'))
-  var addStylesServerPath = loaderUtils.stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesServer.js'))
-  var addStylesShadowPath = loaderUtils.stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesShadow.js'))
+  var addStylesClientPath = stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesClient.js'))
+  var addStylesServerPath = stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesServer.js'))
+  var addStylesShadowPath = stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesShadow.js'))
 
-  var request = loaderUtils.stringifyRequest(this, '!!' + remainingRequest)
+  var request = stringifyRequest(this, '!!' + remainingRequest)
   var relPath = path.relative(__dirname, this.resourcePath).replace(/\\/g, '/')
   var id = JSON.stringify(hash(request + relPath))
-  var options = loaderUtils.getOptions(this) || {}
+  var options = this.getOptions()
 
   // direct css import from js --> direct, or manually call `styles.__inject__(ssrContext)` with `manualInject` option
   // css import from vue file --> component lifecycle linked
