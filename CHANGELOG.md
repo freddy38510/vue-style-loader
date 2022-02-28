@@ -1,3 +1,25 @@
+# [4.2.0](https://github.com/@freddy38510/vue-style-loader/compare/v4.1.3...v4.2.0) (2022-02-28)
+
+
+### Bug Fixes
+
+* **babel:** apply plugins only during test ([adfc869](https://github.com/@freddy38510/vue-style-loader/commit/adfc869d5225a740616ac748995ae27962f10efb))
+* **deps:** update dependency hash-sum to v2.0.0 ([c82a49d](https://github.com/@freddy38510/vue-style-loader/commit/c82a49d4ce29f80a1bb2569b0a425a441f9a6cff))
+* use consistent ssrId hashes between server and client ([54d6307](https://github.com/@freddy38510/vue-style-loader/commit/54d6307692790136dfbda64ead5f8ad35d46390f))
+
+
+### Features
+
+* remove type text/css from style element ([bda2902](https://github.com/@freddy38510/vue-style-loader/commit/bda2902da35fccb42a00de0e2c7a76b557184a4b))
+
+
+### Performance Improvements
+
+* get rid of loader-utils ([42fcd56](https://github.com/@freddy38510/vue-style-loader/commit/42fcd56a44ef0ae50de9128b499a2802b0b1fc34))
+* replace deprecated querystring module by URLSearchParams ([6abbf5a](https://github.com/@freddy38510/vue-style-loader/commit/6abbf5a3b54180776b0cf9661f718f7684a6d0ab))
+
+
+
 <a name="4.1.3"></a>
 ## [4.1.3](https://github.com/vuejs/vue-style-loader/compare/v4.0.1...v4.1.3) (2021-03-03)
 
