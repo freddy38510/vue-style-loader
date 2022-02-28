@@ -5,7 +5,6 @@
 */
 var path = require('path')
 var hash = require('hash-sum')
-var qs = require('querystring')
 
 function stringifyRequest(loaderContext, request) {
   return JSON.stringify(
@@ -33,7 +32,7 @@ module.exports.pitch = function (remainingRequest) {
   var isVue = (
     /"vue":true/.test(remainingRequest) ||
     options.manualInject ||
-    qs.parse(this.resourceQuery.slice(1)).vue != null
+    new URLSearchParams(this.resourceQuery).has('vue')
   )
 
   var shared = [
