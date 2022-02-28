@@ -22,8 +22,7 @@ module.exports.pitch = function (remainingRequest) {
   var addStylesShadowPath = stringifyRequest(this, '!' + path.join(__dirname, 'lib/addStylesShadow.js'))
 
   var request = stringifyRequest(this, '!!' + remainingRequest)
-  var relPath = path.relative(__dirname, this.resourcePath).replace(/\\/g, '/')
-  var id = JSON.stringify(hash(request + relPath))
+  var id = JSON.stringify(hash(this.resource))
   var options = this.getOptions()
 
   // direct css import from js --> direct, or manually call `styles.__inject__(ssrContext)` with `manualInject` option
