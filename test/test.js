@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import addStylesClient from '../lib/addStylesClient'
 import addStylesServer from '../lib/addStylesServer'
 

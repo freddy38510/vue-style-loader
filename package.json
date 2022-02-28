@@ -16,10 +16,10 @@
     "hash-sum": "^2.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
+    "babel-jest": "^27.5.1",
     "conventional-changelog-cli": "^2.0.1",
-    "jest": "^22.1.4"
+    "jest": "^27.5.1"
   }
 }
