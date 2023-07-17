@@ -19,7 +19,7 @@
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-modules-commonjs": "^7.16.8",
     "babel-jest": "^27.5.1",
-    "conventional-changelog-cli": "^2.0.1",
+    "conventional-changelog-cli": "^3.0.0",
     "jest": "^27.5.1"
   }
 }
